@@ -6,4 +6,4 @@ Made with nothing but plain html, css and JS because i hate myself :)
 Have fun trying it out yourself under:
 https://krzkro4122.github.io/
 
-![image](https://user-images.githubusercontent.com/75375838/175793802-1a0fa899-7959-42a1-890f-03f431fa5785.png)
+![image](https://user-images.githubusercontent.com/75375838/175793818-a58a30e6-9f29-4600-b8ce-3d3d2a5850fd.png)
