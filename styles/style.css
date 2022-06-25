@@ -46,12 +46,11 @@ body {
 }
 
 #buttons {
-    padding-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     align-content: center;
 }
 
