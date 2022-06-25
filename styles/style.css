@@ -95,3 +95,13 @@ p {
     outline-style: solid;
     outline-color: black;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    opacity: 60%;
+  }

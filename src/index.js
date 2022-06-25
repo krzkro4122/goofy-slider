@@ -12,9 +12,16 @@ const slider = {
 }
 
 
+// Physics of falling with
 function fall() {
+  // Base condition to prevent infinite acceleration
+  if (slider.rotation == 0) {
+    slider.velocity = 0
+    return 0
+  }
 
-  const t = 20e-3
+  // Our time interval between updates
+  const t = 80e-4 * Math.abs(slider.rotation)
 
   // v0
   initialVelocity = slider.velocity
@@ -24,7 +31,7 @@ function fall() {
   // x - x0 (the position delta)
   positionDelta = (1/2 * (initialVelocity + slider.velocity) * t ) * slider.rotation
 
-  console.log(positionDelta)
+  // console.log(positionDelta)
   return positionDelta
 }
 
