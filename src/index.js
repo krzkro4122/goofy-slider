@@ -1,5 +1,6 @@
 // Gravity constant
 const g = 9.81;
+
 // Slider object and it's basic properties
 const slider = {
   min: 0,
@@ -11,8 +12,8 @@ const slider = {
   rotationStep: 3,
 }
 
-
-// Physics of falling with
+// Physics of falling with rotation of the slope taken into account.
+// Returns the desired position change of the sliderPointer.
 function fall() {
   // Base condition to prevent infinite acceleration
   if (slider.rotation == 0) {
@@ -20,7 +21,7 @@ function fall() {
     return 0;
   }
 
-  // Our time interval between updates
+  // Our time interval between updates is dependant on rotation (to mimmic acceleration)
   const t = 80e-4 * Math.abs(slider.rotation)
 
   // v0
