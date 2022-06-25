@@ -6,4 +6,4 @@ Made with nothing but plain html, css and JS because i hate myself :)
 ![image](https://user-images.githubusercontent.com/75375838/175790739-fa0e17d4-1936-4d03-a691-41e0a53de26d.png)
 
 Have fun trying it out under:
-<html to a hosted site to be linked>
+https://krzkro4122.github.io/
