@@ -1,0 +1,97 @@
+body {
+    /* Global stuff */
+    background-color: #1f2127;
+    margin: 200px;
+
+    /* Font Settings */
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+}
+
+#text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#mainContainer {
+    /* outline: dashed 1px white; */
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+
+    /* Flex box inside */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+
+    /* Scale */
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4);
+
+    /* Box Shadow */
+    -webkit-box-shadow: 0px 0px 60px -34px gold;
+    -moz-box-shadow: 0px 0px 60px -34px gold;
+    box-shadow: 0px 0px 60px -34px gold;
+}
+
+#smallContainer {
+    padding: 10px;
+    /* outline: dashed 1px white; */
+}
+
+#buttons {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.button {
+    color: white;
+    background-color: black;
+    padding: 3px;
+    border-color: gold;
+    border-width: 0.5px;
+}
+
+p {
+    color: black;
+    font-size: xx-large;
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: gold;
+}
+
+#slider {
+    height: 5px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#value {
+    height: 5px;
+    border-radius: 10px;
+    background-color: gold;
+}
+
+#sliderPointer {
+    position: relative;
+    top: -7px;
+    left: 145px;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 10px;
+    outline: 2px;
+    outline-style: solid;
+    outline-color: black;
+}
