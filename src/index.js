@@ -1,4 +1,6 @@
+// Gravity constant
 const g = 9.81
+// Slider object and it's basic properties
 const slider = {
   min: 0,
   max: 100,
