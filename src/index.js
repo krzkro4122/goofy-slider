@@ -14,10 +14,18 @@ const slider = {
 
 function fall() {
 
-  initialVelocity = slider.velocity
-  slider.velocity = slider.velocity + Math.floor(slider.rotation) * (g * Math.pow(20e-3, 2)) * 100
+  const t = 20e-3
 
-  return slider.velocity + 1/2 * (initialVelocity + slider.velocity) * 20e-3
+  // v0
+  initialVelocity = slider.velocity
+  // v = v0 + a * t , with rotation information
+  slider.velocity = initialVelocity + g * Math.pow(t, 2)
+
+  // x - x0 (the position delta)
+  positionDelta = (1/2 * (initialVelocity + slider.velocity) * t ) * slider.rotation
+
+  console.log(positionDelta)
+  return positionDelta
 }
 
 
@@ -36,7 +44,7 @@ function hitBorder() {
 // This is done continouosly.
 function updateSlider() {
 
-  slider.value = fall()
+  slider.value = slider.value + fall()
   hitBorder()
 
   // value's width
@@ -48,7 +56,7 @@ function updateSlider() {
 }
 
 
-// Rotate the 'slider' elemnt until a specified threshold
+// Rotate the 'slider' DOM element until a specified threshold
 function changeRotation(rotationValue) {
   rotationValue = slider.rotation + rotationValue
   if (Math.abs(rotationValue) >= slider.rotationThreshold)
