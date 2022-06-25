@@ -1,3 +1,4 @@
+const g = 9.81
 const slider = {
   min: 0,
   max: 100,
@@ -8,17 +9,17 @@ const slider = {
   rotationStep: 3,
 }
 
-const g = 9.81
 
 function fall() {
 
   initialVelocity = slider.velocity
   slider.velocity = slider.velocity + Math.floor(slider.rotation) * (g * Math.pow(20e-3, 2)) * 100
-  // console.log('slider.velocity:', slider.velocity)
 
   return slider.velocity + 1/2 * (initialVelocity + slider.velocity) * 20e-3
 }
 
+
+// Limit the sliderPointer so it doesn't go out of bounds.
 function hitBorder() {
 
   if (slider.value < slider.min)
@@ -26,13 +27,14 @@ function hitBorder() {
 
   if (slider.value > slider.max)
     slider.value = slider.max;
-
 }
 
+
+// Update slider's value according to it's gravitational speed caused by rotation.
+// This is done continouosly.
 function updateSlider() {
 
   slider.value = fall()
-
   hitBorder()
 
   // value's width
@@ -43,6 +45,8 @@ function updateSlider() {
   document.getElementById('sliderPointer').style.left = `${( slider.value / 100) * sliderWidth}px`;
 }
 
+
+// Rotate the 'slider' elemnt until a specified threshold
 function changeRotation(rotationValue) {
   rotationValue = slider.rotation + rotationValue
   if (Math.abs(rotationValue) >= slider.rotationThreshold)
@@ -51,9 +55,10 @@ function changeRotation(rotationValue) {
   document.getElementById('slider').style.transform = `rotate(${rotationValue}deg)`;
 }
 
+
 // Main script entry
 function main() {
-  // so the buttons tilt the slider
+  // Bind the buttons so they tilt the slider
   document.getElementById("plus").addEventListener("click", () => {
     changeRotation(slider.rotationStep)
   });
@@ -61,7 +66,7 @@ function main() {
     changeRotation(-slider.rotationStep)
   });
 
-  // Make it happen continuously
+  // Basic event loop
   setInterval(updateSlider, 20);
 }
 
