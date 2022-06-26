@@ -10,7 +10,7 @@ const slider = {
     rotation: 0,
     rotationThreshold: 15,
     rotationStep: 3,
-}
+};
 
 // Physics of falling with rotation of the slope taken into account.
 // Returns the desired position change of the sliderPointer.
@@ -22,7 +22,7 @@ function fall() {
     }
 
     // Our time interval between updates is dependant on rotation (to mimmic acceleration)
-    const t = 80e-4 * Math.abs(slider.rotation)
+    const t = 80e-4 * Math.abs(slider.rotation);
 
     // v0
     initialVelocity = slider.velocity;
@@ -52,7 +52,7 @@ function win(showPrize, hidePrize) {
     if (Math.floor(slider.value) != 50)
         hidePrize();
     else
-        showPrize()
+        showPrize();
 }
 
 
