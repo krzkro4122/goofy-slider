@@ -66,7 +66,7 @@ function hitBorder() {
 }
 
 
-function win(showPrize, hidePrize) {
+function win(hidePrize, showPrize) {
     if (Math.floor(slider.value) != 50)
         hidePrize();
     else
@@ -92,14 +92,14 @@ function updateViewPort() {
     document.getElementById('currentValue').innerText = Math.floor(slider.value);
 
     win(
+        // hidePrize
+        () => {
+            document.getElementById('prize').style.visibility = 'hidden';
+        },
         // showPrize
         () => {
             document.getElementById('prize').style.visibility = 'visible';
         },
-        // hidePrize
-        () => {
-            document.getElementById('prize').style.visibility = 'hidden';
-        }
     );
 }
 
@@ -114,14 +114,29 @@ function changeRotation(rotationValue) {
 }
 
 
+// Bind arrow keys to tilt slider
+// Left arrow
+window.addEventListener('keydown', (event) => {
+    if (event.keyCode === 37) {
+        document.getElementById('minus').click();
+    }
+});
+// Right arrow
+window.addEventListener('keydown', (event) => {
+    if (event.keyCode === 39) {
+        document.getElementById('plus').click();
+    }
+});
+
+
 // Main script entry
 function main() {
     // Bind the buttons so they tilt the slider
-    document.getElementById("plus").addEventListener("click", () => {
-        changeRotation(slider.rotationStep);
-    });
     document.getElementById("minus").addEventListener("click", () => {
         changeRotation(-slider.rotationStep);
+    });
+    document.getElementById("plus").addEventListener("click", () => {
+        changeRotation(slider.rotationStep);
     });
 
     // Basic event loop

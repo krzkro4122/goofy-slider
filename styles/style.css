@@ -3,7 +3,7 @@
 body {
     /* Global stuff */
     background-color: #1f2127;
-    margin: 200px;
+    margin: 7%;
 
     /* Font Settings */
     font-size: 20px;
@@ -39,9 +39,14 @@ input {
     border-width: 0.5px;
 }
 
+form {
+    text-align: center;
+    margin-left: 6%;
+}
+
 p {
     color: black;
-    font-size: xx-large;
+    font-size: 200%;
     -webkit-text-stroke: 0.5px;
     -webkit-text-stroke-color: gold;
 }
@@ -123,8 +128,17 @@ p {
 
 #prize {
     visibility: hidden;
-    margin-top: 100px;
+    margin-top: 4%;
+    font-size: 250%;
     text-align: center;
+}
+
+#hint {
+    margin-top: 6%;
+    text-align: center;
+    font-size: large;
+    opacity: 60%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #credits {
