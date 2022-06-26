@@ -5,7 +5,7 @@ const g = 9.81;
 const slider = {
     min: 0,
     max: 100,
-    value: 60,
+    value: 69,
     velocity: 0,
     rotation: 0,
     rotationThreshold: 15,
