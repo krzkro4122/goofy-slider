@@ -5,9 +5,11 @@ const g = 9.81;
 const slider = {
     min: 0,
     max: 100,
+    time: 0,
     value: 69,
     velocity: 0,
     rotation: 0,
+    direction: 0, // -1 -> left ,0 -> start, 1 -> right
     rotationThreshold: 15,
     rotationStep: 3,
 };
@@ -15,22 +17,38 @@ const slider = {
 // Physics of falling with rotation of the slope taken into account.
 // Returns the desired position change of the sliderPointer.
 function fall() {
-    // Base condition to prevent infinite acceleration
-    if (slider.rotation == 0) {
-        slider.velocity = 0;
-        return 0;
+    // Our time interval between updates is dependant on rotation (to mimmic acceleration)
+    const T = 20e-4;
+
+
+    // Simple, straight-line gravitational fall
+    // s = vt + at^2 / 2
+    if (Math.floor(slider.rotation) != 0){
+        slider.time += T;
+        positionDelta = (slider.velocity * slider.time + g * Math.pow(T, 2) * 1/2) * Math.floor(slider.rotation);
+        slider.velocity += (g * T);
+    }
+    else {
+        // Drag or just stop
+        if (slider.time > 0)
+            slider.time -= T;
+        else
+            slider.time = 0;
+        positionDelta = (slider.velocity * slider.time - g * Math.pow(T, 2) * 1/2) * slider.direction;
+        slider.velocity += (g * T) * slider.direction;
     }
 
-    // Our time interval between updates is dependant on rotation (to mimmic acceleration)
-    const t = 80e-4 * Math.abs(slider.rotation);
+    // Taking direction into account
 
-    // v0
-    initialVelocity = slider.velocity;
-    // v = v0 + a * t , with rotation information
-    slider.velocity = initialVelocity + g * Math.pow(t, 2);
-
-    // x - x0 (the position delta)
-    positionDelta = (1/2 * (initialVelocity + slider.velocity) * t ) * slider.rotation;
+    // Changing direction to right
+    if (positionDelta > 0 && slider.direction <= 0) {
+        slider.time = 0;
+        slider.direction = 1;
+    } // Changing direction to left
+    else if ( positionDelta < 0 && slider.direction >= 0) {
+        slider.time = 0;
+        slider.direction = -1;
+    }
 
     // console.log(positionDelta)
     return positionDelta;
