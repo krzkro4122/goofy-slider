@@ -1,3 +1,5 @@
+/* TAG STYLES */
+
 body {
     /* Global stuff */
     background-color: #1f2127;
@@ -9,10 +11,34 @@ body {
     color: white;
 }
 
-#text {
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    margin-top: 10px;
+    opacity: 60%;
 }
+
+p {
+    color: black;
+    font-size: xx-large;
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: gold;
+}
+
+/* CLASS STYLES */
+
+button {
+    color: white;
+    background-color: black;
+    padding: 3px;
+    border-color: gold;
+    border-width: 0.5px;
+}
+
+/* ID STYLES */
 
 #mainContainer {
     /* outline: dashed 1px white; */
@@ -45,6 +71,11 @@ body {
     /* outline: dashed 1px white; */
 }
 
+#text {
+    text-align: center;
+    margin-top: 10px;
+}
+
 #buttons {
     display: flex;
     flex-direction: row;
@@ -52,21 +83,6 @@ body {
     justify-content: space-between;
     align-items: center;
     align-content: center;
-}
-
-.button {
-    color: white;
-    background-color: black;
-    padding: 3px;
-    border-color: gold;
-    border-width: 0.5px;
-}
-
-p {
-    color: black;
-    font-size: xx-large;
-    -webkit-text-stroke: 0.5px;
-    -webkit-text-stroke-color: gold;
 }
 
 #slider {
@@ -95,12 +111,8 @@ p {
     outline-color: black;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 80%;
-    height: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+#prize {
+    visibility: hidden;
+    margin-top: 100px;
     text-align: center;
-    opacity: 60%;
-  }
+}
