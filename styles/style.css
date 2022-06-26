@@ -29,6 +29,16 @@ button {
     border-width: 0.5px;
 }
 
+input {
+    transform: scale(1.5);
+    color: white;
+    background-color: black;
+    padding: 2px;
+    margin-left: 25px;
+    border-color: gold;
+    border-width: 0.5px;
+}
+
 p {
     color: black;
     font-size: xx-large;
@@ -115,4 +125,15 @@ p {
     visibility: hidden;
     margin-top: 100px;
     text-align: center;
+}
+
+#credits {
+    padding: 10px;
+    color: gold ;
+    margin-left: 5px;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    background-color: #1f2127;
 }
