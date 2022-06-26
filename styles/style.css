@@ -21,6 +21,14 @@ footer {
     opacity: 60%;
 }
 
+button {
+    color: white;
+    background-color: black;
+    padding: 3px;
+    border-color: gold;
+    border-width: 0.5px;
+}
+
 p {
     color: black;
     font-size: xx-large;
@@ -29,14 +37,6 @@ p {
 }
 
 /* CLASS STYLES */
-
-button {
-    color: white;
-    background-color: black;
-    padding: 3px;
-    border-color: gold;
-    border-width: 0.5px;
-}
 
 /* ID STYLES */
 
